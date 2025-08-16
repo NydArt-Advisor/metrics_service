@@ -6803,3 +6803,207 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:02:32:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 04:32:28"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:02:32:38 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 04:32:38"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:02:32:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 04:32:48"}
+{"level":"info","message":"MongoDB Connected: ac-slyllrd-shard-00-01.itukwfr.mongodb.net","service":"metrics-service","timestamp":"2025-08-16 05:20:51"}
+{"level":"info","message":"Redis client connected","service":"metrics-service","timestamp":"2025-08-16 05:20:51"}
+{"level":"info","message":"Redis client ready","service":"metrics-service","timestamp":"2025-08-16 05:20:51"}
+{"level":"info","message":"MongoDB Connected: ac-slyllrd-shard-00-00.itukwfr.mongodb.net","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"Redis client connected","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"Redis client ready","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"Metrics service running on port 5005","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"Environment: development","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"Prometheus metrics available at: http://localhost:5005/metrics","service":"metrics-service","timestamp":"2025-08-16 05:23:01"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:03 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:03"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:13 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:13"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:23 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:23"}
+{"level":"info","message":"::1 - - [16/Aug/2025:03:23:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\"","service":"metrics-service","timestamp":"2025-08-16 05:23:28"}
+{"level":"info","message":"::1 - - [16/Aug/2025:03:23:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\"","service":"metrics-service","timestamp":"2025-08-16 05:23:28"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:33 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:33"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:42 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:42"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:23:52 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:23:52"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:02 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:02"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:12 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:12"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:22 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:22"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:32 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:32"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:42 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:42"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:24:52 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:24:52"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:02 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:02"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:12 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:12"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:22 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:22"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:32 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:32"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:42 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:42"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:25:52 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:25:52"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:02 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:02"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:12 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:12"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:22 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:22"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:32 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:32"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:42 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:42"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:26:52 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:26:52"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:01 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:01"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:11 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:11"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:21 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:21"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:31 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:31"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:41 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:41"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:27:51 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:27:51"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"metrics-service","timestamp":"2025-08-16 05:27:52"}
+{"level":"info","message":"MongoDB Connected: ac-slyllrd-shard-00-00.itukwfr.mongodb.net","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"Redis client connected","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"Redis client ready","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"Metrics service running on port 5005","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"Environment: development","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"Prometheus metrics available at: http://localhost:5005/metrics","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:29:41 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:29:41"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:29:51 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:29:51"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:01 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:01"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:11 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:11"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:21 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:21"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:30 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:30"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:40 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:40"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:30:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:30:50"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:00 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:00"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:10 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:10"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:20 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:20"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:30 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:30"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:40 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:40"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:31:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:31:50"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:00 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:00"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:10 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:10"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:20 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:20"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:30 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:30"}
+{"level":"info","message":"MongoDB Connected: ac-slyllrd-shard-00-00.itukwfr.mongodb.net","service":"metrics-service","timestamp":"2025-08-16 05:32:30"}
+{"level":"info","message":"Redis client connected","service":"metrics-service","timestamp":"2025-08-16 05:32:30"}
+{"level":"info","message":"Redis client ready","service":"metrics-service","timestamp":"2025-08-16 05:32:30"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:40 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:40"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:32:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:32:50"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:00 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:00"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:10 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:10"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:20 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:20"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:30 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:30"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:39 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:39"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:50"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:33:59 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:33:59"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:09 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:09"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:19 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:19"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:29 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:29"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:39 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:39"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:49 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:49"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:34:59 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:34:59"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:09 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:09"}
+{"level":"info","message":"::1 - - [16/Aug/2025:03:35:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\"","service":"metrics-service","timestamp":"2025-08-16 05:35:18"}
+{"level":"info","message":"::1 - - [16/Aug/2025:03:35:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\"","service":"metrics-service","timestamp":"2025-08-16 05:35:18"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:19 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:19"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:29 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:29"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:39 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:39"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:49 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:49"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:35:59 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:35:59"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:09 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:09"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:19 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:19"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:29 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:29"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:39 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:39"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:49 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:49"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:36:59 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:36:59"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:08 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:08"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:19 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:19"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:28"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:38 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:38"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:48"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:37:58 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:37:58"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:08 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:08"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:18"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:28"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:38 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:38"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:48"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:38:58 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:38:58"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:08 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:08"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:18"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:28"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:38 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:38"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:48"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:39:58 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:39:58"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:08 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:08"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:18"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:28 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:28"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:37 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:37"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:48"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:40:57 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:40:57"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:07 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:07"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:17 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:17"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:27 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:27"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:37 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:37"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:47 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:47"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:41:57 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:41:57"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:42:07 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:42:07"}
+{"level":"info","message":"MongoDB Connected: ac-slyllrd-shard-00-02.itukwfr.mongodb.net","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"Redis client connected","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"Redis client ready","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"Metrics service running on port 5005","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"Environment: development","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"Prometheus metrics available at: http://localhost:5005/metrics","service":"metrics-service","timestamp":"2025-08-16 05:46:24"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:46:47 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:46:47"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:46:57 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:46:57"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:07 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:07"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:17 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:17"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:26 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:26"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:36 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:36"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:46 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:46"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:47:56 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:47:56"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:05 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:05"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:15 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:15"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:25 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:25"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:35 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:35"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:44 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:44"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:48:54 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:48:54"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:04 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:04"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:14 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:14"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:23 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:23"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:33 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:33"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:43 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:43"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:49:53 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:49:53"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:03 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:03"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:12 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:12"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:22 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:22"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:32 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:32"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:41 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:41"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:50:51 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:50:51"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:01 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:01"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:11 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:11"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:21 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:21"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:30 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:30"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:40 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:40"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:51:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:51:50"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:00 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:00"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:09 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:09"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:19 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:19"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:29 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:29"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:39 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:39"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:48 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:48"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:52:58 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:52:58"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:08 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:08"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:18 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:18"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:27 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:27"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:37 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:37"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:47 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:47"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:53:57 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:53:57"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:06 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:06"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:16 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:16"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:26 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:26"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:36 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:36"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:45 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:45"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:54:55 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:54:55"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:05 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:05"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:15 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:15"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:24 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:24"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:34 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:34"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:44 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:44"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:55:54 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:55:54"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:03 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:03"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:13 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:13"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:23 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:23"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:33 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:33"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:42 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:42"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:56:52 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:56:52"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:02 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:02"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:12 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:12"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:21 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:21"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:31 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:31"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:41 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:41"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [16/Aug/2025:03:57:50 +0000] \"GET /metrics HTTP/1.1\" 200 - \"-\" \"Prometheus/2.47.0\"","service":"metrics-service","timestamp":"2025-08-16 05:57:50"}
