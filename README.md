@@ -1,500 +1,424 @@
-# Metrics Service - NydArt Advisor
+# Metrics Service - Technical Documentation
 
-A comprehensive metrics and analytics service for tracking AI requests, user engagement, sales analytics, and performance monitoring using Node.js, Express, MongoDB, Redis, and Prometheus.
+## Table of Contents
+1. [Service Overview](#service-overview)
+2. [Technology Stack](#technology-stack)
+3. [Architecture](#architecture)
+4. [Installation & Setup](#installation--setup)
+5. [Configuration](#configuration)
+6. [API Reference](#api-reference)
+7. [Deployment Guide](#deployment-guide)
+8. [User Manual](#user-manual)
+9. [Update Manual](#update-manual)
+10. [Monitoring & Troubleshooting](#monitoring--troubleshooting)
+11. [Security Considerations](#security-considerations)
+12. [Testing](#testing)
 
-## Features
+## Service Overview
 
-### 🤖 AI Request Tracking
-- Track AI model usage (GPT-4, GPT-3.5-turbo, Claude-3, Gemini-Pro)
-- Monitor token consumption and costs
-- Analyze request performance and success rates
-- Feature-based categorization (artwork analysis, style recommendation, etc.)
+The Metrics Service is a comprehensive monitoring and analytics microservice responsible for tracking, collecting, and analyzing various metrics across the NydArt Advisor application. It provides real-time insights into AI request performance, user engagement, sales analytics, and system performance.
 
-### 👥 User Engagement Analytics
-- Page view and feature usage tracking
-- Session duration and user journey analysis
-- Device and browser analytics
-- UTM campaign tracking
-- User behavior patterns
+### Key Features
+- **AI Request Tracking**: Monitor AI analysis requests, response times, and usage patterns
+- **User Engagement Analytics**: Track user behavior, session data, and feature usage
+- **Sales Analytics**: Monitor payment processing, revenue metrics, and subscription data
+- **Performance Monitoring**: System performance metrics, response times, and resource utilization
+- **Real-time Dashboards**: Prometheus metrics for monitoring and alerting
+- **Data Visualization**: Analytics endpoints for chart and report generation
+- **Caching**: Redis integration for high-performance data access
 
-### 💰 Sales Analytics
-- Transaction tracking and revenue analysis
-- Subscription metrics and MRR calculation
-- Customer lifetime value (CLV) analysis
-- Payment method distribution
-- Refund and churn tracking
+### Service Responsibilities
+- Collect and store metrics from all application services
+- Provide analytics and reporting capabilities
+- Monitor system performance and health
+- Generate insights for business intelligence
+- Support monitoring and alerting systems
+- Maintain historical data for trend analysis
 
-### ⚡ Performance Monitoring
-- HTTP request/response metrics
-- System resource monitoring (CPU, Memory, Disk)
-- Database connection pool monitoring
-- Cache hit rate tracking
-- Error rate analysis and alerting
+## Technology Stack
 
-### 📊 Prometheus Integration
-- Custom metrics for all tracking categories
-- Real-time monitoring capabilities
-- Integration with Grafana for visualization
-- Default system metrics collection
+### Core Technologies
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js 4.18.2
+- **Language**: JavaScript (ES6+)
+
+### Database & Storage
+- **MongoDB**: Primary data storage with Mongoose ODM
+- **Redis**: Caching and session storage
+- **Prometheus**: Metrics collection and monitoring
+
+### Monitoring & Analytics
+- **Prometheus Client**: Metrics collection
+- **Winston**: Logging framework
+- **Morgan**: HTTP request logging
+- **Moment.js**: Date/time manipulation
+
+### Security & Performance
+- **Helmet**: Security headers
+- **CORS**: Cross-origin resource sharing
+- **Rate Limiting**: Request throttling
+- **Compression**: Response compression
+- **JWT**: Authentication middleware
+
+### Development & Testing
+- **Mocha**: Test framework
+- **Chai**: Assertion library
+- **Sinon**: Mocking and stubbing
+- **Supertest**: HTTP testing
+- **NYC**: Code coverage
+- **Jest**: Alternative test framework
+
+### Utilities
+- **Axios**: HTTP client for service communication
+- **Lodash**: Utility functions
+- **Express Validator**: Input validation
+- **dotenv**: Environment variable management
 
 ## Architecture
 
+### Service Structure
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Auth Service  │    │  Payment Service│
-│   (Next.js)     │    │   (Port 5002)   │    │  (Port 3004)    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-                    ┌─────────────────┐
-                    │  Metrics Service│
-                    │   (Port 5005)   │
-                    └─────────────────┘
-                                 │
-         ┌───────────────────────┼───────────────────────┐
-         │                       │                       │
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   MongoDB       │    │     Redis       │    │   Prometheus    │
-│  (Metrics DB)   │    │   (Caching)     │    │   (Port 9090)   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+metrics_service/
+├── src/
+│   ├── server.js              # Main application entry point
+│   ├── routes/
+│   │   ├── metrics.js         # Core metrics endpoints
+│   │   ├── aiTracking.js      # AI request tracking
+│   │   ├── analytics.js       # User engagement analytics
+│   │   └── performance.js     # Performance monitoring
+│   ├── models/
+│   │   ├── AIRequest.js       # AI request data model
+│   │   ├── UserEngagement.js  # User engagement model
+│   │   ├── SalesAnalytics.js  # Sales data model
+│   │   └── PerformanceMetrics.js # Performance data model
+│   ├── middleware/
+│   │   ├── auth.js           # Authentication middleware
+│   │   └── errorHandler.js   # Error handling middleware
+│   ├── config/
+│   │   ├── database.js       # MongoDB configuration
+│   │   └── redis.js          # Redis configuration
+│   ├── utils/
+│   │   └── logger.js         # Logging utility
+│   └── test/                 # Test suite
+├── package.json
+└── .env                      # Environment variables
 ```
 
-## Quick Start
+### Data Flow
+1. **Data Collection**: Services send metrics data via HTTP requests
+2. **Validation**: Input validation and sanitization
+3. **Storage**: Data stored in MongoDB with Redis caching
+4. **Processing**: Real-time aggregation and analysis
+5. **Exposure**: Metrics exposed via Prometheus and REST APIs
+6. **Visualization**: Data available for dashboards and reports
+
+### Service Dependencies
+- **Frontend Service**: Sends user engagement metrics
+- **AI Service**: Sends AI request metrics
+- **Payment Service**: Sends sales and payment metrics
+- **Auth Service**: Provides authentication for protected endpoints
+- **Database Service**: May query user data for analytics
+
+## Installation & Setup
 
 ### Prerequisites
-- Node.js 18+
-- MongoDB
-- Redis (optional, for caching)
-- Prometheus (optional, for monitoring)
+- Node.js 18+ installed
+- npm or yarn package manager
+- MongoDB instance (local or cloud)
+- Redis instance (local or cloud)
 
-### Installation
+### Installation Steps
 
-1. **Clone and install dependencies:**
-```bash
-cd metrics-service-DarylNyd
-npm install
-```
+1. **Clone and Navigate**
+   ```bash
+   cd metrics_service
+   ```
 
-2. **Set up environment variables:**
-```bash
-cp env.example .env
-# Edit .env with your configuration
-```
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-3. **Start the service:**
-```bash
-# Development mode
-npm run dev
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
 
-# Production mode
-npm start
-```
+4. **Database Setup**
+   ```bash
+   # Ensure MongoDB is running
+   # Ensure Redis is running
+   ```
+
+5. **Verify Installation**
+   ```bash
+   npm test
+   ```
+
+### Database Setup
+
+#### MongoDB Setup
+1. **Local MongoDB**
+   ```bash
+   # Install MongoDB locally
+   # Start MongoDB service
+   mongod --dbpath /path/to/data
+   ```
+
+2. **MongoDB Atlas (Cloud)**
+   - Create account at https://cloud.mongodb.com
+   - Create cluster
+   - Get connection string
+   - Add to `.env` file
+
+#### Redis Setup
+1. **Local Redis**
+   ```bash
+   # Install Redis locally
+   # Start Redis service
+   redis-server
+   ```
+
+2. **Redis Cloud**
+   - Create account at https://redis.com
+   - Create database
+   - Get connection details
+   - Add to `.env` file
+
+## Configuration
 
 ### Environment Variables
 
+#### Server Configuration
 ```env
-# Server Configuration
 PORT=5005
-NODE_ENV=development
-
-# Database Configuration
-MONGODB_URI=mongodb://localhost:27017/nydart_metrics
-REDIS_URL=redis://localhost:6379
-
-# Service URLs
-AUTH_SERVICE_URL=http://localhost:5002
-DATABASE_SERVICE_URL=http://localhost:5001
-PAYMENT_SERVICE_URL=http://localhost:3004
-FRONTEND_URL=http://localhost:3000
-
-# Security
-JWT_SECRET=your-jwt-secret-here
-API_KEY=your-secret-api-key-here
-
-# Metrics Retention (days)
-METRICS_RETENTION_DAYS=90
-SALES_RETENTION_DAYS=365
-PERFORMANCE_RETENTION_DAYS=30
+NODE_ENV=production
 ```
 
-## API Endpoints
+#### Database Configuration
+```env
+# MongoDB Configuration
+MONGODB_URI=mongodb://localhost:27017/metrics_service
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/metrics_service
 
-### Health Check
+# Redis Configuration
+REDIS_URL=redis://localhost:6379
+REDIS_URL=redis://username:password@host:port
+```
+
+#### Security Configuration
+```env
+# JWT Configuration
+JWT_SECRET=your_jwt_secret_key
+JWT_EXPIRES_IN=24h
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+```
+
+#### Service URLs
+```env
+FRONTEND_URL=https://your-frontend-domain.com
+CLIENT_URL=https://your-client-domain.com
+```
+
+#### Monitoring Configuration
+```env
+# Prometheus Configuration
+ENABLE_METRICS=true
+METRICS_PORT=9090
+
+# Logging Configuration
+LOG_LEVEL=info
+LOG_FILE=logs/metrics-service.log
+```
+
+### Configuration Files
+
+#### Database Configuration (`src/config/database.js`)
+- MongoDB connection setup
+- Connection pooling
+- Error handling
+
+#### Redis Configuration (`src/config/redis.js`)
+- Redis connection setup
+- Cache configuration
+- Session storage setup
+
+## API Reference
+
+### Base URL
+```
+http://localhost:5005 (development)
+https://your-metrics-service.com (production)
+```
+
+### Authentication
+All API endpoints require JWT authentication via Authorization header:
+```http
+Authorization: Bearer <jwt_token>
+```
+
+### Endpoints
+
+#### Health Check
 ```http
 GET /health
 ```
+**Response:**
+```json
+{
+  "status": "OK",
+  "service": "Metrics Service",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "environment": "production",
+  "version": "1.0.0"
+}
+```
 
-### Prometheus Metrics
+#### Prometheus Metrics
 ```http
 GET /metrics
 ```
+**Response:** Prometheus-formatted metrics
 
-### AI Request Tracking
+#### AI Request Tracking
 
-#### Track AI Request
+##### Track AI Request
 ```http
-POST /api/ai-tracking/track
-Authorization: Bearer <token>
+POST /api/ai-tracking/request
 Content-Type: application/json
 
 {
-  "requestId": "req_123456789",
-  "model": "gpt-4",
-  "prompt": "Analyze this artwork...",
-  "feature": "artwork-analysis",
-  "complexity": "medium",
-  "language": "en",
-  "userPlan": "premium"
+  "userId": "user123",
+  "imageUrl": "https://example.com/image.jpg",
+  "requestType": "art_analysis",
+  "model": "gpt-4-vision",
+  "timestamp": "2024-01-15T10:30:00Z"
 }
 ```
 
-#### Update AI Request Status
+##### Get AI Request Stats
 ```http
-PUT /api/ai-tracking/update/:requestId
-Authorization: Bearer <token>
+GET /api/ai-tracking/stats?period=daily&startDate=2024-01-01&endDate=2024-01-15
+```
+
+#### User Engagement Analytics
+
+##### Track User Activity
+```http
+POST /api/analytics/activity
 Content-Type: application/json
 
 {
-  "status": "completed",
-  "response": "Analysis result...",
-  "tokens": {
-    "input": 150,
-    "output": 300
-  },
-  "cost": 0.05
-}
-```
-
-#### Get AI Request Statistics
-```http
-GET /api/ai-tracking/stats?startDate=2024-01-01&endDate=2024-01-31
-Authorization: Bearer <token>
-```
-
-### User Engagement Analytics
-
-#### Track Engagement Event
-```http
-POST /api/analytics/engagement/track
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "event": "page_view",
-  "sessionId": "sess_123456789",
+  "userId": "user123",
+  "action": "login",
   "page": "/dashboard",
-  "feature": "artwork-analysis",
-  "value": 1,
-  "properties": {
-    "timeOnPage": 120,
-    "scrollDepth": 75
-  }
+  "sessionId": "session123",
+  "timestamp": "2024-01-15T10:30:00Z"
 }
 ```
 
-#### Get Engagement Statistics
+##### Get User Engagement Stats
 ```http
-GET /api/analytics/engagement/stats?startDate=2024-01-01&endDate=2024-01-31
-Authorization: Bearer <token>
+GET /api/analytics/engagement?period=weekly&startDate=2024-01-01&endDate=2024-01-15
 ```
 
-### Sales Analytics
+#### Sales Analytics
 
-#### Track Sales Transaction
+##### Track Payment
 ```http
-POST /api/analytics/sales/track
-Authorization: Bearer <token>
+POST /api/analytics/payment
 Content-Type: application/json
 
 {
-  "transactionId": "txn_123456789",
-  "type": "subscription",
+  "userId": "user123",
   "amount": 29.99,
   "currency": "USD",
-  "status": "completed",
   "paymentMethod": "stripe",
-  "plan": "premium"
+  "subscriptionType": "premium",
+  "timestamp": "2024-01-15T10:30:00Z"
 }
 ```
 
-#### Get Sales Statistics
+##### Get Sales Stats
 ```http
-GET /api/analytics/sales/stats?startDate=2024-01-01&endDate=2024-01-31
-Authorization: Bearer <token>
+GET /api/analytics/sales?period=monthly&startDate=2024-01-01&endDate=2024-01-31
 ```
 
-### Performance Monitoring
+#### Performance Monitoring
 
-#### Track Performance Metric
+##### Track Performance Metric
 ```http
-POST /api/performance/track
-Authorization: Bearer <token>
+POST /api/performance/metric
 Content-Type: application/json
 
 {
-  "service": "auth",
-  "endpoint": "/auth/login",
-  "method": "POST",
+  "service": "ai_service",
+  "endpoint": "/analyze",
+  "responseTime": 1500,
   "statusCode": 200,
-  "responseTime": 150,
-  "requestSize": 1024,
-  "responseSize": 2048,
-  "system": {
-    "cpu": { "usage": 45.2 },
-    "memory": { "percentage": 67.8 }
-  }
+  "timestamp": "2024-01-15T10:30:00Z"
 }
 ```
 
-#### Get Performance Statistics
+##### Get Performance Stats
 ```http
-GET /api/performance/stats?service=auth&startDate=2024-01-01
-Authorization: Bearer <token>
+GET /api/performance/stats?service=ai_service&period=hourly&startDate=2024-01-15T00:00:00Z&endDate=2024-01-15T23:59:59Z
 ```
 
-### Dashboard & General Metrics
+### Error Responses
 
-#### Get Dashboard Overview
-```http
-GET /api/metrics/dashboard
-Authorization: Bearer <token>
-```
-
-#### Get Metrics Summary
-```http
-GET /api/metrics/summary?groupBy=day&startDate=2024-01-01&endDate=2024-01-31
-Authorization: Bearer <token>
-```
-
-#### Get Top Metrics
-```http
-GET /api/metrics/top-metrics?metric=ai-models&limit=10
-Authorization: Bearer <token>
-```
-
-## Prometheus Metrics
-
-The service exposes the following custom metrics:
-
-### AI Request Metrics
-- `ai_requests_total` - Total AI requests by model, status, feature, user plan
-- `ai_request_duration_seconds` - Request duration histogram
-- `ai_request_tokens_total` - Token usage by model, type, user plan
-- `ai_request_cost_total` - Cost tracking by model, user plan
-
-### User Engagement Metrics
-- `user_engagement_events_total` - Event counts by type, feature, user plan
-- `active_users_current` - Current active users gauge
-- `user_session_duration_seconds` - Session duration histogram
-
-### Sales Metrics
-- `sales_transactions_total` - Transaction counts by type, status, plan
-- `sales_revenue_total` - Revenue tracking by type, plan, currency
-- `subscriptions_current` - Current subscription counts
-
-### Performance Metrics
-- `http_request_duration_seconds` - HTTP request duration histogram
-- `http_requests_total` - HTTP request counts
-- `system_cpu_usage_percentage` - CPU usage gauge
-- `system_memory_usage_percentage` - Memory usage gauge
-- `system_disk_usage_percentage` - Disk usage gauge
-- `database_connection_pool` - Database connection pool status
-- `cache_hit_rate_percentage` - Cache hit rate gauge
-
-## Grafana Integration
-
-### Prometheus Data Source
-1. Add Prometheus as a data source in Grafana
-2. URL: `http://localhost:9090`
-3. Access: Server (default)
-
-### Sample Dashboards
-
-#### AI Analytics Dashboard
-- AI request volume over time
-- Model usage distribution
-- Cost analysis by model
-- Success rate trends
-- Feature usage heatmap
-
-#### User Engagement Dashboard
-- Active users over time
-- Page view trends
-- Feature adoption rates
-- User journey funnel
-- Device/browser analytics
-
-#### Sales Dashboard
-- Revenue trends
-- Subscription metrics
-- Payment method distribution
-- Customer lifetime value
-- Churn analysis
-
-#### Performance Dashboard
-- Response time trends
-- Error rate monitoring
-- System resource usage
-- Database performance
-- Cache hit rates
-
-## Data Models
-
-### AIRequest
-```javascript
+#### Authentication Error (401)
+```json
 {
-  userId: ObjectId,
-  requestId: String,
-  model: String,
-  prompt: String,
-  response: String,
-  tokens: { input: Number, output: Number, total: Number },
-  cost: Number,
-  status: String,
-  metadata: {
-    feature: String,
-    complexity: String,
-    language: String
-  },
-  performance: {
-    startTime: Date,
-    endTime: Date,
-    duration: Number
-  },
-  userPlan: String,
-  createdAt: Date
+  "error": "Unauthorized",
+  "message": "Invalid or missing token"
 }
 ```
 
-### UserEngagement
-```javascript
+#### Validation Error (400)
+```json
 {
-  userId: ObjectId,
-  sessionId: String,
-  event: String,
-  page: String,
-  feature: String,
-  metadata: {
-    deviceType: String,
-    browser: String,
-    os: String,
-    timeOnPage: Number,
-    scrollDepth: Number
-  },
-  userPlan: String,
-  value: Number,
-  properties: Object,
-  timestamp: Date
+  "error": "Validation Error",
+  "message": "Invalid input data",
+  "details": ["userId is required"]
 }
 ```
 
-### SalesAnalytics
-```javascript
+#### Server Error (500)
+```json
 {
-  userId: ObjectId,
-  transactionId: String,
-  type: String,
-  amount: Number,
-  currency: String,
-  status: String,
-  paymentMethod: String,
-  plan: String,
-  subscription: {
-    startDate: Date,
-    endDate: Date,
-    interval: String
-  },
-  metadata: Object,
-  createdAt: Date
+  "error": "Internal Server Error",
+  "message": "An unexpected error occurred"
 }
 ```
 
-### PerformanceMetrics
-```javascript
-{
-  service: String,
-  endpoint: String,
-  method: String,
-  userId: ObjectId,
-  requestId: String,
-  statusCode: Number,
-  responseTime: Number,
-  system: {
-    cpu: { usage: Number, load: Number },
-    memory: { used: Number, total: Number, percentage: Number },
-    disk: { used: Number, total: Number, percentage: Number }
-  },
-  database: {
-    queryTime: Number,
-    connectionPool: { active: Number, idle: Number, total: Number }
-  },
-  cache: { hits: Number, misses: Number, hitRate: Number },
-  timestamp: Date
-}
-```
+## Deployment Guide
 
-## Security
+### Production Deployment
 
-### Authentication
-- JWT-based authentication
-- Integration with auth service
-- Role-based access control (admin/user)
+#### Environment Setup
+1. **Set Production Environment**
+   ```bash
+   NODE_ENV=production
+   ```
 
-### Rate Limiting
-- Configurable rate limits per IP
-- Default: 100 requests per 15 minutes
+2. **Configure Production Variables**
+   - Use production database URLs
+   - Set production service URLs
+   - Configure CORS for production domains
 
-### Data Privacy
-- User data isolation
-- Admin-only access to aggregated metrics
-- Automatic data retention policies
+3. **SSL/TLS Configuration**
+   - Ensure HTTPS endpoints
+   - Configure SSL certificates
+   - Set secure headers
 
-## Monitoring & Alerting
+#### Deployment Options
 
-### Health Checks
-- Service health endpoint
-- Database connectivity monitoring
-- Redis connectivity monitoring
-
-### Performance Alerts
-- High error rate detection
-- Slow response time alerts
-- System resource thresholds
-
-### Data Retention
-- Configurable TTL indexes
-- Automatic cleanup of old data
-- Different retention periods per metric type
-
-## Development
-
-### Running Tests
-```bash
-npm test
-npm run test:watch
-```
-
-### Code Structure
-```
-src/
-├── config/          # Database and Redis configuration
-├── middleware/      # Authentication and error handling
-├── models/          # MongoDB schemas
-├── routes/          # API route handlers
-├── utils/           # Utilities and helpers
-└── server.js        # Main application file
-```
-
-### Logging
-- Winston-based logging
-- Structured JSON logs
-- File and console output
-- Log rotation and retention
-
-## Deployment
-
-### Docker
+##### Docker Deployment
 ```dockerfile
 FROM node:18-alpine
 WORKDIR /app
@@ -505,34 +429,527 @@ EXPOSE 5005
 CMD ["npm", "start"]
 ```
 
-### Environment Variables for Production
-```env
-NODE_ENV=production
-PORT=5005
-MONGODB_URI=mongodb://your-mongodb-uri
-REDIS_URL=redis://your-redis-uri
-JWT_SECRET=your-secure-jwt-secret
+##### PM2 Deployment
+```bash
+npm install -g pm2
+pm2 start src/server.js --name "metrics-service"
+pm2 save
+pm2 startup
 ```
 
-## Contributing
+##### Cloud Platform Deployment
+- **Render.com**: Connect GitHub repository
+- **Heroku**: Use Heroku CLI or GitHub integration
+- **AWS**: Use Elastic Beanstalk or ECS
+- **Google Cloud**: Use App Engine or Cloud Run
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+#### Health Checks
+```bash
+# Check service health
+curl https://your-service.com/health
 
-## License
+# Check metrics
+curl https://your-service.com/metrics
+```
 
-MIT License - see LICENSE file for details
+### Monitoring Setup
 
-## Support
+#### Prometheus Configuration
+```yaml
+scrape_configs:
+  - job_name: 'metrics-service'
+    static_configs:
+      - targets: ['localhost:5005']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+```
 
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the documentation
+#### Grafana Dashboard
+```json
+{
+  "dashboard": {
+    "title": "NydArt Advisor Metrics",
+    "panels": [
+      {
+        "title": "AI Requests per Hour",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(ai_requests_total[1h])",
+            "legendFormat": "AI Requests/sec"
+          }
+        ]
+      },
+      {
+        "title": "User Engagement",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(user_activities_total[1h])",
+            "legendFormat": "User Activities/sec"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+#### Alert Rules
+```yaml
+groups:
+  - name: metrics-service
+    rules:
+      - alert: MetricsServiceDown
+        expr: up{job="metrics-service"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Metrics service is down"
+      
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate detected"
+```
+
+## User Manual
+
+### For Developers
+
+#### Sending Metrics Data
+```javascript
+// Track AI request
+const response = await fetch('/api/ai-tracking/request', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    userId: 'user123',
+    imageUrl: 'https://example.com/image.jpg',
+    requestType: 'art_analysis',
+    model: 'gpt-4-vision',
+    timestamp: new Date().toISOString()
+  })
+});
+
+// Track user activity
+const response = await fetch('/api/analytics/activity', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    userId: 'user123',
+    action: 'login',
+    page: '/dashboard',
+    sessionId: 'session123',
+    timestamp: new Date().toISOString()
+  })
+});
+```
+
+#### Retrieving Analytics
+```javascript
+// Get AI request stats
+const response = await fetch('/api/ai-tracking/stats?period=daily&startDate=2024-01-01&endDate=2024-01-15', {
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+});
+
+const stats = await response.json();
+console.log('AI Request Stats:', stats);
+```
+
+#### Error Handling
+```javascript
+try {
+  const response = await fetch('/api/analytics/activity', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(data)
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    console.error('Metrics tracking failed:', error.message);
+  }
+} catch (error) {
+  console.error('Request failed:', error);
+}
+```
+
+### For System Administrators
+
+#### Service Management
+```bash
+# Start service
+npm start
+
+# Start in development mode
+npm run dev
+
+# Run tests
+npm test
+
+# Check service health
+curl http://localhost:5005/health
+```
+
+#### Database Management
+```bash
+# Check MongoDB connection
+mongo metrics_service --eval "db.stats()"
+
+# Check Redis connection
+redis-cli ping
+
+# Monitor database performance
+mongo metrics_service --eval "db.currentOp()"
+```
+
+#### Log Monitoring
+```bash
+# View logs
+tail -f logs/metrics-service.log
+
+# Monitor errors
+grep "ERROR" logs/metrics-service.log
+
+# Monitor performance
+grep "responseTime" logs/metrics-service.log
+```
+
+## Update Manual
+
+### Version Updates
+
+#### Minor Updates
+1. **Backup Data**
+   ```bash
+   # Backup MongoDB
+   mongodump --db metrics_service --out backup/
+   
+   # Backup Redis
+   redis-cli BGSAVE
+   ```
+
+2. **Update Dependencies**
+   ```bash
+   npm update
+   ```
+
+3. **Test Changes**
+   ```bash
+   npm test
+   ```
+
+4. **Restart Service**
+   ```bash
+   pm2 restart metrics-service
+   ```
+
+#### Major Updates
+1. **Review Changelog**
+   - Check breaking changes
+   - Review new features
+   - Verify compatibility
+
+2. **Staging Deployment**
+   - Deploy to staging environment
+   - Run full test suite
+   - Verify all metrics collection works
+
+3. **Production Deployment**
+   - Schedule maintenance window
+   - Deploy with rollback plan
+   - Monitor closely after deployment
+
+### Configuration Updates
+
+#### Database Changes
+1. **Update Connection Strings**
+   ```bash
+   # Update MongoDB URI
+   MONGODB_URI=new_mongodb_connection_string
+   
+   # Update Redis URL
+   REDIS_URL=new_redis_connection_string
+   ```
+
+2. **Test Connections**
+   ```bash
+   curl http://localhost:5005/health
+   ```
+
+3. **Restart Service**
+   ```bash
+   pm2 restart metrics-service
+   ```
+
+#### Monitoring Changes
+1. **Update Prometheus Configuration**
+   ```yaml
+   scrape_configs:
+     - job_name: 'metrics-service'
+       static_configs:
+         - targets: ['new-service-url:5005']
+   ```
+
+2. **Update Alert Rules**
+   ```yaml
+   groups:
+     - name: metrics-service
+       rules:
+         - alert: NewAlert
+           expr: new_metric > threshold
+   ```
+
+## Monitoring & Troubleshooting
+
+### Key Metrics
+
+#### Performance Metrics
+- **Response Time**: Average API response time
+- **Throughput**: Requests per second
+- **Error Rate**: Percentage of failed requests
+- **Database Performance**: Query response times
+
+#### Business Metrics
+- **AI Request Volume**: Number of AI analyses per time period
+- **User Engagement**: Active users, session duration
+- **Sales Performance**: Revenue, conversion rates
+- **Feature Usage**: Most used features and pages
+
+### Common Issues
+
+#### Database Connection Issues
+**Symptoms:**
+- 500 errors on API endpoints
+- Database connection timeouts
+- High response times
+
+**Solutions:**
+1. Check MongoDB connection string
+2. Verify network connectivity
+3. Check database server status
+4. Review connection pool settings
+
+#### Redis Connection Issues
+**Symptoms:**
+- Cache misses
+- Session storage failures
+- Performance degradation
+
+**Solutions:**
+1. Check Redis connection string
+2. Verify Redis server status
+3. Check memory usage
+4. Review cache configuration
+
+#### High Memory Usage
+**Symptoms:**
+- Service crashes
+- Slow response times
+- Out of memory errors
+
+**Solutions:**
+1. Monitor memory usage
+2. Optimize database queries
+3. Implement data archiving
+4. Scale horizontally
+
+### Debugging Tools
+
+#### Log Analysis
+```bash
+# View real-time logs
+tail -f logs/metrics-service.log
+
+# Search for specific errors
+grep "ERROR" logs/metrics-service.log | tail -20
+
+# Monitor performance
+grep "responseTime" logs/metrics-service.log | tail -10
+```
+
+#### Health Checks
+```bash
+# Basic health check
+curl http://localhost:5005/health
+
+# Detailed metrics
+curl http://localhost:5005/metrics
+
+# Database health
+curl http://localhost:5005/health/database
+```
+
+#### Performance Testing
+```bash
+# Load test
+ab -n 1000 -c 10 http://localhost:5005/health
+
+# Stress test
+ab -n 10000 -c 100 http://localhost:5005/health
+```
+
+## Security Considerations
+
+### Authentication & Authorization
+- JWT-based authentication for all API endpoints
+- Token validation and expiration
+- Role-based access control (if implemented)
+
+### Data Protection
+- Input validation and sanitization
+- SQL injection prevention
+- XSS protection
+- Data encryption in transit and at rest
+
+### API Security
+- Rate limiting to prevent abuse
+- CORS configuration for allowed origins
+- Input validation and sanitization
+- Secure headers configuration
+
+### Monitoring Security
+- Audit logging for all operations
+- Access control for metrics endpoints
+- Secure storage of sensitive data
+- Regular security updates
+
+### Compliance
+- GDPR compliance for user data
+- Data retention policies
+- Privacy protection measures
+- Regular security audits
+
+## Testing
+
+### Test Categories
+
+#### Unit Tests
+- Service function testing
+- Data model validation
+- Utility function testing
+- Error handling tests
+
+#### Integration Tests
+- API endpoint testing
+- Database integration
+- Redis integration
+- External service integration
+
+#### Performance Tests
+- Load testing
+- Stress testing
+- Database performance
+- Response time testing
+
+### Running Tests
+
+#### Full Test Suite
+```bash
+npm test
+```
+
+#### Specific Test Categories
+```bash
+# Unit tests only
+npm run test:unit
+
+# Integration tests only
+npm run test:integration
+
+# Performance tests only
+npm run test:performance
+```
+
+#### Test Coverage
+```bash
+npm run test:coverage
+```
+
+### Test Configuration
+
+#### Test Environment
+```env
+NODE_ENV=test
+MONGODB_URI=mongodb://localhost:27017/metrics_service_test
+REDIS_URL=redis://localhost:6379/1
+```
+
+#### Mock Services
+- External APIs mocked for testing
+- Database operations mocked
+- Redis operations mocked
+
+### Continuous Integration
+
+#### GitHub Actions
+```yaml
+name: Metrics Service Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:5.0
+        ports:
+          - 27017:27017
+      redis:
+        image: redis:6.2
+        ports:
+          - 6379:6379
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:coverage
+```
+
+#### Test Reports
+- Coverage reports generated
+- Test results published
+- Performance metrics tracked
 
 ---
 
-**Metrics Service** - Empowering data-driven decisions for NydArt Advisor 
+## Support & Maintenance
+
+### Documentation Updates
+- Keep this documentation current
+- Update API examples
+- Maintain troubleshooting guides
+
+### Regular Maintenance
+- Monitor service performance
+- Update dependencies regularly
+- Review security configurations
+- Backup data regularly
+
+### Contact Information
+- Technical issues: Create GitHub issue
+- Security concerns: Contact security team
+- General questions: Check documentation first
+
+---
+
+*Last Updated: January 2024*
+*Version: 1.0.0*
