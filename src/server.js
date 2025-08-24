@@ -20,6 +20,9 @@ const { authMiddleware } = require('./middleware/auth');
 
 const app = express();
 
+// Trust proxy configuration for rate limiting behind load balancers/proxies
+app.set('trust proxy', 1);
+
 // Initialize Prometheus metrics
 const register = promClient.register;
 // Prevent duplicate metric registration in development (e.g., with nodemon)
@@ -31,8 +34,46 @@ promClient.collectDefaultMetrics({ register });
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    credentials: true
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        
+        const allowedOrigins = [
+            process.env.FRONTEND_URL,
+            process.env.CLIENT_URL,
+            // Add both Vercel domains
+            'https://nydartadvisor-p3gw0m3og-darylnyds-projects.vercel.app',
+            'https://nydartadvisor.vercel.app',
+            'https://nydartadvisor-git-main-darylnyds-projects.vercel.app',
+            // Add any other Vercel preview domains
+            /^https:\/\/nydartadvisor.*\.vercel\.app$/,
+        ];
+        
+        // Check if origin matches any allowed origins
+        const isAllowed = allowedOrigins.some(allowedOrigin => {
+            if (typeof allowedOrigin === 'string') {
+                return origin === allowedOrigin;
+            } else if (allowedOrigin instanceof RegExp) {
+                return allowedOrigin.test(origin);
+            }
+            return false;
+        });
+        
+        if (isAllowed) {
+            callback(null, true);
+        } else {
+            console.log('CORS blocked origin:', origin);
+            // For development, allow all origins
+            if (process.env.NODE_ENV === 'development') {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
 }));
 
 // Rate limiting
@@ -55,13 +96,17 @@ app.use(morgan('combined', { stream: { write: message => logger.info(message.tri
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+app.get("/", (req, res) => {
+  res.send("Metrics Service is running");
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.json({
         status: 'OK',
         service: 'Metrics Service',
         timestamp: new Date().toISOString(),
-        environment: process.env.NODE_ENV || 'development',
+        environment: process.env.NODE_ENV,
         version: require('../package.json').version
     });
 });
@@ -127,7 +172,7 @@ const startServer = async () => {
         
         app.listen(PORT, () => {
             logger.info(`Metrics service running on port ${PORT}`);
-            logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
+            logger.info(`Environment: ${process.env.NODE_ENV}`);
             logger.info(`Prometheus metrics available at: http://localhost:${PORT}/metrics`);
         });
     } catch (error) {
@@ -136,6 +181,10 @@ const startServer = async () => {
     }
 };
 
-startServer();
+// Export app for testing
+module.exports = app;
 
-module.exports = app; 
+// Only start the server if this file is run directly
+if (require.main === module) {
+    startServer();
+} 
