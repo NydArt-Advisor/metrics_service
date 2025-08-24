@@ -1,37 +1,55 @@
-FROM node:18-alpine
+# Multi-stage build for production
+FROM node:18-alpine AS base
 
-# Set working directory
+# Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install dependencies for node-gyp (if needed)
-RUN apk add --no-cache python3 make g++
+# Install dependencies based on the preferred package manager
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production && npm cache clean --force
 
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy source code
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# Build the application
+RUN npm run build
+
+# Production image, copy all the files and run the app
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=5006
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nodejs
+
+# Copy the built application
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Copy any additional files needed
+COPY --from=builder /app/src/config ./src/config
+COPY --from=builder /app/src/middleware ./src/middleware
+COPY --from=builder /app/src/models ./src/models
+COPY --from=builder /app/src/routes ./src/routes
+COPY --from=builder /app/src/utils ./src/utils
+
 # Create logs directory
-RUN mkdir -p logs
+RUN mkdir -p /app/logs && chown -R nodejs:nodejs /app/logs
 
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nodejs -u 1001
-
-# Change ownership of the app directory
-RUN chown -R nodejs:nodejs /app
 USER nodejs
 
-# Expose port
-EXPOSE 5005
+EXPOSE 5006
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:5005/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+  CMD node -e "require('http').get('http://localhost:5006/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
 
-# Start the application
-CMD ["npm", "start"] 
+CMD ["node", "dist/server.js"] 
